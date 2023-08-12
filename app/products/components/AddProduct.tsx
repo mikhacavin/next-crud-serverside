@@ -15,14 +15,10 @@ e.preventDefault()
 setIsMutating(true)
 await fetch('https://next-blog-prisma.vercel.app/api/blog',
 {
-    method: 'POST',
-    headers: {
-        'Content-Type': 'application/json'
-    },
-    body: JSON.stringify({
-        title,
-        description
-    })
+    method: "POST",
+    body: JSON.stringify({ title, description}),
+      //@ts-ignore
+    "Content-Type": "application/json",
 })
 setIsMutating(false)
 setTitle("")

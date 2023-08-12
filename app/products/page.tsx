@@ -5,7 +5,7 @@ import UpdateProduct from "./components/UpdateProduct";
 
 
 type Product = {
-    _id: string;
+    id: string;
     title: string;
     description: string;
 }
@@ -38,7 +38,7 @@ const ProductList = async () => {
             </thead>
             <tbody>
         {posts.map((post, index) =>(
-           <tr key={post._id}>
+           <tr key={post.id}>
                 <td>{index +1}</td>
                 <td>{post.title}</td>
                 <td>{post.description}</td>

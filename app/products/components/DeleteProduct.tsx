@@ -3,7 +3,7 @@ import {useState } from "react"
 import { useRouter } from "next/navigation"
 
 type Product = {
-    _id: string;
+    id: string;
     title: string;
     description: string;
 }
@@ -19,7 +19,9 @@ const DeleteProduct = (post : Product) => {
     setIsMutating(true)
     await fetch(`https://next-blog-prisma.vercel.app/api/blog/${productId}`,
     {
-        method: 'DELETE',
+        method: "DELETE",
+          //@ts-ignore
+          "Content-Type": "application/json",
     })
     setIsMutating(false)
     router.refresh();
@@ -42,7 +44,7 @@ const DeleteProduct = (post : Product) => {
                     <div className="modal-action">
                         <button type="button" className="btn" onClick={handleChange}>Close</button>
                         {!isMutating ? (
-                        <button type="button" onClick={() =>handleDelete(post._id)} className="btn btn-primary">Delete</button>
+                        <button type="button" onClick={() =>handleDelete(post.id)} className="btn btn-primary">Delete</button>
                         ): (
                         <button type="button" className="btn loading">Deleting..</button>
                         )}

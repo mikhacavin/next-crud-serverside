@@ -3,7 +3,7 @@ import {SyntheticEvent, useState } from "react"
 import { useRouter } from "next/navigation"
 
 type Product = {
-    _id: string;
+    id: string;
     title: string;
     description: string;
 }
@@ -19,16 +19,15 @@ const UpdateProduct = (post : Product) => {
 async function handleUpdate(e:SyntheticEvent){
 e.preventDefault()
 setIsMutating(true)
-await fetch(`https://next-blog-prisma.vercel.app/api/blog/${post._id}`,
+await fetch(`https://next-blog-prisma.vercel.app/api/blog/${post.id}`,
 {
-    method: 'PATCH',
-    headers: {
-        'Content-Type': 'application/json'
-    },
+    method: "PUT",
     body: JSON.stringify({
-        title,
-        description
-    })
+        title: title,
+        description : description
+    }),
+       //@ts-ignore
+    "Content-Type": "application/json"
 })
 setIsMutating(false)
 router.refresh();
