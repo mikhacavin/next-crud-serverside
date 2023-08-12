@@ -9,7 +9,7 @@ type Product = {
 }
 
 
-const deleteProduct = (post : Product) => {
+const DeleteProduct = (post : Product) => {
     const [modal,setModal] = useState(false);
     const [isMutating,setIsMutating] = useState(false);
 
@@ -53,4 +53,4 @@ const deleteProduct = (post : Product) => {
   )
 }
 
-export default deleteProduct
+export default DeleteProduct

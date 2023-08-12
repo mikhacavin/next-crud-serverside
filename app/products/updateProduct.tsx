@@ -8,7 +8,7 @@ type Product = {
     description: string;
 }
 
-const updateProduct = (post : Product) => {
+const UpdateProduct = (post : Product) => {
     const [title, setTitle] = useState(post.title)
     const [description, setDescription] = useState(post.description)
     const [modal,setModal] = useState(false);
@@ -72,4 +72,4 @@ function handleChange(){
   )
 }
 
-export default updateProduct
+export default UpdateProduct

@@ -2,7 +2,7 @@
 import {SyntheticEvent, useState } from "react"
 import { useRouter } from "next/navigation"
 
-const addProduct = () => {
+const AddProduct = () => {
     const [title, setTitle] = useState("")
     const [description, setDescription] = useState("")
     const [modal,setModal] = useState(false);
@@ -68,4 +68,4 @@ function handleChange(){
   )
 }
 
-export default addProduct
+export default AddProduct
