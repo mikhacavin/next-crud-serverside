@@ -1,8 +1,8 @@
 import Link from "next/link";
+import AddProduct from "./components/AddProduct";
+import DeleteProduct from "./components/DeleteProduct";
+import UpdateProduct from "./components/UpdateProduct";
 
-import DeleteProduct from "./DeleteProduct";
-import UpdateProduct from "./UpdateProduct";
-import AddProduct from "./AddProduct";
 
 type Product = {
     _id: string;
